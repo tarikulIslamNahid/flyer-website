@@ -10,32 +10,7 @@ useHead({
 </script>
 
 <template>
-        <!-- responsive sidebar start -->
-        <div class="responsive-sidebar d-block d-lg-none">
-            <div class="responsive-sidebar-inner">
-                <div class="logo mb-30">
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="/assets/img/logo/logo.webp" alt="image not found">
-                        </div>
-                        <div class="col-6">
-                            <div class="text-end">
-                                <button class="responsive-sidebar-close"><i class="fal fa-times"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="resposive-sidebar-menu mb-50">
-                    <div class="mobile-menu"></div>
-                </div>
-                <div class="responsive-sidebar-actions">
-                    <a href="contact.html"
-                        class="sasup-border-btn d-block sasup-broder-btn-space-3 ms-0 text-center mb-2">login</a>
-                    <a href="contact.html" class="sasup-theme-btn text-center d-inline-block d-sm-none w-100"><span>Free
-                            Trial</span></a>
-                </div>
-            </div>
-        </div>
+        
         <!-- responsive sidebar end -->
         <main>
             <!-- hero area start -->

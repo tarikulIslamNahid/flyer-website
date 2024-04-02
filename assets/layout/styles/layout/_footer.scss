@@ -1,0 +1,26 @@
+.layout-footer {
+    transition: margin-left $transitionDuration;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0 1.5rem 1rem;
+    border-radius: 1rem;
+    border-top: 0;
+    box-shadow: 0 1.6rem 3rem #0000001a;
+
+    align-items: center;
+    -webkit-backdrop-filter: blur(.5rem);
+    backdrop-filter: blur(0.5rem);
+    background-color: #ffffff80;
+    border-top: 1px solid #f8f9fa;
+    bottom: 0;
+    color: #323232;
+    display: flex;
+    height: 4rem;
+    padding: 0 0.75rem;
+    position: -webkit-sticky;
+    position: sticky;
+    will-change: backdrop-filter;
+    z-index: 1018;
+}

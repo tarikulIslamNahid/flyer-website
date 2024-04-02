@@ -1,0 +1,35 @@
+/* Utils */
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.card,.p-card {
+    // background: var(--surface-card);
+    // border: 1px solid var(--surface-border);
+    padding: 1.6rem;
+    margin-bottom: 2rem;
+    margin-top: 1.2rem;
+    box-shadow: var(--card-shadow);
+    border-radius: 1.2rem;
+    // border-radius: $borderRadius;
+
+    --bs-border-color: #dee2e680;
+    background-color: #fff !important;
+    border: 1px solid var(--bs--border-color);
+    box-shadow: 0 1.1rem 3rem #0000001a;
+    margin-bottom: calc(1.275rem + 0.3vw);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.p-toast {
+    &.p-toast-top-right,
+    &.p-toast-top-left,
+    &.p-toast-top-center {
+        top: 100px;
+    }
+}

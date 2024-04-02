@@ -74,13 +74,5 @@ export default defineNuxtConfig({
     },
     css: [
       'primeicons/primeicons.css', 'primeflex/primeflex.scss', 'primevue/resources/primevue.min.css', '@/assets/styles.scss', '@/assets/custom.css',
-      '@/assets/website.css',
-       '@/assets/animate.min.css',
-       '@/assets/elegantFont.css',
-       '@/assets/flaticon.css',
-       '@/assets/fontawesome-all.min.css',
-       '@/assets/magnific-popup.css',
-       '@/assets/meanmenu.css',
-       '@/assets/odometer-theme-default.css',
     ],  
 });

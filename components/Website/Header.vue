@@ -17,6 +17,8 @@ const responsiveSidebarClose = () => {
 };
 </script>
 <template>
+    <div>
+
   <header>
     <div class="header-transparent sasup-header-style-5 header-sticky">
       <div class="header-main">
@@ -151,5 +153,6 @@ const responsiveSidebarClose = () => {
       </div>
     </div>
   </div>
-</template>
-<style></style>
+</div>
+
+</template> 

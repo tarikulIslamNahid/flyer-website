@@ -10,8 +10,7 @@ useHead({
 </script>
 
 <template>
-        
-        <!-- responsive sidebar end -->
+         
         <main>
             <!-- hero area start -->
             <section class="hero-area hero-space-5 bg-top-center pt-180" data-background="/assets/img/shape/hero-bg-2.webp">

@@ -3,6 +3,8 @@
  
 </script>
 <template>
+    <div>
+
             <!-- back to top start -->
             <div class="progress-wrap">
                 <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -141,6 +143,8 @@
                 </div>
             </footer>
             <!-- footer area end -->
+    </div>
+
 </template>
 <style>
 </style>

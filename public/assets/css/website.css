@@ -14044,3 +14044,7 @@ section.hero-area {
   background-image: url(https://www.devsnews.com/template/sasup-prev/sasup/assets/img/shape/subscription.webp);
   background-color: rgb(60, 57, 195);
 }
+.breadcrumb-area{
+  background-image: url(/assets/img/bg/breadcrumb_bg.webp) !important;
+
+}

@@ -4,11 +4,16 @@ useHead({
  
 });
 import { ref, onMounted } from 'vue';
-const isLoad = ref(true);
+import { useRouter } from 'vue-router';
 
+const isLoad = ref(true);
+const router = useRouter();
+router.beforeEach((to, from, next) => {
+    window.scrollTo(0, 0);
+    next();
+});
  
 onMounted( async () => {
-    
     const links = [
         '/assets/css/bootstrap.min.css',
         '/assets/css/website.css',
@@ -22,7 +27,6 @@ onMounted( async () => {
         '/assets/css/website.scss',
     ]
 
-    // load all stylesheets in head tag asyncronously
      links.forEach((link) => {
         const head = document.getElementsByTagName('head')[0];
         const linkElement = document.createElement('link');
@@ -65,7 +69,7 @@ window.addEventListener('click', function() {
 
 </script>
 <template>
-        <div v-if="isLoad" id="loading">
+     <div v-if="isLoad" id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <div class="object" id="object_one"></div>
@@ -78,8 +82,9 @@ window.addEventListener('click', function() {
     <div v-else>
         <Toast />
         <websiteHeader/>
-        <slot  />
+        <router-view></router-view>
         <websiteFooter/>
+
     </div>
     </template>
     

@@ -1,6 +1,7 @@
 <script setup>
 const config = useRuntimeConfig();
-
+import {useRouter} from 'vue-router';
+const router = useRouter();
 // onclick mobile-bar-control toggle bar-control-clicked class
 const mobileBarControl = () => {
   const mobileBarControl = document.querySelector(".mobile-bar-control");
@@ -15,12 +16,26 @@ const responsiveSidebarClose = () => {
   const mobileBarControl = document.querySelector(".mobile-bar-control");
   mobileBarControl.classList.toggle("bar-control-clicked");
 };
+
+    // if url is login add sticky in .header-transparent
+  const isLogin = computed(() => {
+    return router.currentRoute.value.path == '/login';
+  });
+if(!isLogin){
+
+  // .header-transparent scroll to add .sticky class using js
+  window.addEventListener('scroll', function() {
+        var header = document.querySelector('.header-transparent');
+        header.classList.toggle('sticky', window.scrollY > 0);
+      });
+    }
+
 </script>
 <template>
     <div>
 
   <header>
-    <div class="header-transparent sasup-header-style-5 header-sticky">
+    <div class="header-transparent sasup-header-style-5 header-sticky" :class="isLogin?'header-transparent sasup-header-style-5 header-sticky log sticky':'header-transparent sasup-header-style-5 header-sticky log'">
       <div class="header-main">
         <div class="container">
           <div class="row align-items-center justify-content-between">
@@ -68,11 +83,11 @@ const responsiveSidebarClose = () => {
             </div>
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-6">
               <div class="sasup-header-action-5 text-end">
-                <a href="sign-in.html" class="sasup-login-btn-5"
-                  ><i class="fal fa-user"></i> Log in</a
+                <nuxtLink to="/login" class="sasup-login-btn-5"
+                  ><i class="fal fa-user"></i> Log in</nuxtLink
                 >
-                <a href="sign-up.html" class="sasup-header-white-btn-5 header-btn"
-                  >Join US</a
+                <nuxtLink to="/sign-up" class="sasup-header-white-btn-5 header-btn"
+                  >Join US</nuxtLink
                 >
                 <div
                   @click="mobileBarControl"
@@ -139,15 +154,14 @@ const responsiveSidebarClose = () => {
         </div>
       </div>
       <div class="responsive-sidebar-actions">
-        <a
-          href="contact.html"
+        <nuxtLink
+          to="/login"
           class="sasup-border-btn d-block sasup-broder-btn-space-3 ms-0 text-center mb-2"
-          >login</a
-        >
-        <a
-          href="contact.html"
+          >login </nuxtLink>
+        <nuxtLink
+        to="/sign-up"
           class="sasup-theme-btn text-center d-inline-block d-sm-none w-100"
-          ><span>Free Trial</span></a
+          ><span>Free Trial</span></nuxtLink
         >
       </div>
     </div>

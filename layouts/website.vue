@@ -10,6 +10,11 @@ const isLoad = ref(true);
 const router = useRouter();
 router.beforeEach((to, from, next) => {
     window.scrollTo(0, 0);
+    // isLogin footer = to.meta.layout === 'website';
+
+
+
+
     next();
 });
  
@@ -36,13 +41,11 @@ onMounted( async () => {
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));
     isLoad.value = false;
+
+     
     
 });
-  // .header-transparent scroll to add .sticky class using js
-  window.addEventListener('scroll', function() {
-        var header = document.querySelector('.header-transparent');
-        header.classList.toggle('sticky', window.scrollY > 0);
-    });
+
  
     // preloader
     window.addEventListener('load', function() {
@@ -83,7 +86,6 @@ window.addEventListener('click', function() {
         <Toast />
         <websiteHeader/>
         <router-view></router-view>
-        <websiteFooter/>
 
     </div>
     </template>

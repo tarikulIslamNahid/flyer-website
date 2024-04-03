@@ -64,7 +64,8 @@ const submitLogin =async () => {
 };
 
 definePageMeta({
-    layout: 'guest',
+    // layout: 'guest',
+    layout: 'website',
     // middleware: 'guest' 
 });
 useHead({
@@ -73,53 +74,73 @@ useHead({
 </script>
 
 <template>
-    <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
-        
-        <div class="flex flex-column align-items-center justify-content-center">
-            <div style="border-radius: 56px; padding: 0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%)">
-                <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius: 53px">
-                    <div class="text-center mb-8">
-                        <router-link to="/" class="layout-topbar-logo ">
-                            <img src="/layout/images/icon.svg" alt="logo" width="30" />
-                            <img src="/layout/images/logo-icon.svg" alt="logo" width="150" />
-                        </router-link>
-                        <!-- <div class="text-900 text-3xl font-medium mb-3">Welcome To  Karam!</div> -->
-                        <!-- <span class="text-600 font-medium">Sign in to continue</span> -->
+    <main>
+
+        <!-- sign-in area start  -->
+        <section class="df-sign-in__area pt-130 pb-115">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="df-booking2__form wow fadeInUp" data-wow-delay=".3s">
+                            <div class="login__title-wrapper text-center mb-50">
+                                <h3 class="login__title">Wellcome Again</h3>
+                                <p class="mt-15">The faster you fill up. the faster you get a login</p>
+                            </div>
+                            <form action="#">
+                                <div class="row gx-5">
+                                    <div class="col-md-12">
+                                        <div class="df-input-field">
+                                            <input type="text" id="email3" name="email3" placeholder="Username or Email *">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="df-input-field mb-0">
+                                            <input type="password" name="password" placeholder="Password *">
+                                            <span class="fa fa-eye pass-icon"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row align-items-center justify-content-between">
+                                            <div class="sign-meta">
+                                                <div class="df-login">
+                                                    <!-- <input type="checkbox" value="lsRememberMe" id="rememberMe">
+                                                    <label for="rememberMe">Remember me</label> -->
+                                                </div>
+                                                <div class="edu-lost-password mt-3 pb-0">
+                                                    <a class="btn-read-more" href="reset-password.html"><span>Lost your
+                                                            password?</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="df-booking2__form-btn mt-15 mb-30">
+                                            <button type="submit" class="sasup-theme-btn-2 w-100">Login
+                                            </button>
+                                        </div>
+                                    </div> 
+                                    <div class="col-md-12">
+                                        <div class="sing-up-text text-center">
+                                            <span class="sign-title">
+                                                Don’t have an account?
+                                            </span>
+                                            <a class="sign-link" href="sign-up.html">Sign Up</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
- 
-<br>
-<pre>
- 
-</pre>
-<br>
-                    <form @submit.prevent="submitLogin">
-                        <div class="field">
-
-                            <label for="email" class="block  mb-2">Email address</label>
-                            <InputText  id="email" v-model="authSetup.email" required="true" type="email" placeholder="Email address" class="w-full md:w-30rem" style="padding: 1rem" :class="{'p-invalid': v$.email?.$error}" />
-                            <span v-if="v$.email.$error" role="alert" class="block p-error">{{ v$.email?.$errors[0].$message}}</span>
-                            
-                        </div>
-                        <div class="field py-3">
-
-                            <label for="password" class="block mb-2">Password</label>
-                            <InputText  id="password" v-model="authSetup.password" required="true" type="password" placeholder="Enter Password" class="w-full md:w-30rem " style="padding: 1rem" :class="{'p-invalid': v$.password?.$error}" />
-                            <span v-if="v$.password.$error" role="alert" class="block p-error">{{ v$.password?.$errors[0].$message}}</span>
-                            
-                        </div>
-                     
-                        <div class="flex align-items-center justify-content-end mb-5 gap-5">
-                             
-                            <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Forgot password?</a>
-                        </div>
-                        <Button label="Sign In" :loading="loading" type="submit" class="w-full p-3 text-xl"></Button>
-                    </form>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+        <!-- sign-in area end  -->
+
+    </main>
 
     <!-- <AppConfig simple /> -->
+    <websiteFooter :isNone="true" />
+
 </template>
 
 <style scoped>
@@ -131,4 +152,7 @@ useHead({
     transform: scale(1.6);
     margin-right: 1rem;
 }
-</style>
+.sasup-footer-space-4{
+    margin-top:0px !important;
+}
+</style> 

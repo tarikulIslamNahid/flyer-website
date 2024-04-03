@@ -635,4 +635,6 @@ const accordionItem = (e) => {
         </div>
     <!-- cta area end -->
     </main>
+    <websiteFooter  />
+
 </template> 

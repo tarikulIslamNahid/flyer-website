@@ -1,6 +1,14 @@
 <script setup>
  const config = useRuntimeConfig();
- 
+//  isNone props is used to hide the footer in some pages
+
+ const props = defineProps({
+     isNone: {
+         type: Boolean,
+         default: false
+     }
+ });
+
 </script>
 <template>
 
@@ -14,7 +22,7 @@
         
             <!-- footer area start -->
             <footer class="sasup-footer-4 footer-bg">
-                <div class="sasup-footer-style-4 footer-top sasup-footer-space-4">
+                <div class="sasup-footer-style-4 footer-top sasup-footer-space-4" :style="isNone?'margin-top:0px;padding-top:190px':''" >
                     <div class="container">
                         <div class="row">
                             <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-6 col-sm-6 sasup-footer-col-flex-4-1">

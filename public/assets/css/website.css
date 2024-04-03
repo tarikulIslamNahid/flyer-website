@@ -7236,7 +7236,7 @@ input:-ms-input-placeholder {
 }
 
 .single-service-img-inner .service-img-1 {
-  height: 200px;
+  height: 178px;
   width: 360px;
   object-fit: cover;
   border-radius: 4px;
@@ -7247,7 +7247,7 @@ input:-ms-input-placeholder {
   }
 }
 .single-service-img-inner .service-img-2 {
-  width: 200px;
+  width: 178px;
   border-radius: 4px;
   height: 220px;
   object-fit: cover;
@@ -14047,4 +14047,14 @@ section.hero-area {
 .breadcrumb-area{
   background-image: url(/assets/img/bg/breadcrumb_bg.webp) !important;
 
+}
+/* .cta-area{
+  background-image: url(/assets/img/bg/cta-1.webp);
+    background-color: rgb(74, 37, 147);
+} */
+.service-info-wrapper {
+  background-color: rgb(10, 20, 38);
+}
+.service-img-boxed-group.custom-h-100 {
+  background-color: rgb(45, 115, 248);
 }

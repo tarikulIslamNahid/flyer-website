@@ -3,7 +3,6 @@
  
 </script>
 <template>
-    <div>
 
             <!-- back to top start -->
             <div class="progress-wrap">
@@ -23,8 +22,12 @@
                                     class="widget_text sasup-widget-5 sasup-footer-col-4-1 mb-30 widget_custom_html">
                                     <div class="textwidget custom-html-widget">
                                         <div class="logo">
-                                            <a href="index.html"><img :src="config.public.APP_URL+'/assets/img/logo/logo-theme.webp'"
-                                                    alt="logo"></a>
+                                            <nuxtLink to="/">
+                                                <img :src="config.public.APP_URL + '/layout/images/icon.svg'"
+                                                alt="image not found" width="25px"/>
+                                              <img :src="config.public.APP_URL + '/layout/images/logo-icon.svg'"
+                                                alt="image not found" width="120px" />
+                                                </nuxtLink>
                                         </div>
                                         <p>A amazing WordPress theme designed specifically for a startup, apps, business, SaaS, and
                                             IT services.</p>
@@ -143,7 +146,6 @@
                 </div>
             </footer>
             <!-- footer area end -->
-    </div>
 
 </template>
 <style>

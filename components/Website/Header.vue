@@ -26,16 +26,21 @@ const responsiveSidebarClose = () => {
           <div class="row align-items-center justify-content-between">
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-6">
               <div class="sasup-logo mr-35 d-inline-block">
-                <a href="index.html" class="logo-1"
+                <nuxtLink to="/" class="logo-1"
                   >
                   <img :src="config.public.APP_URL + '/layout/images/icon.svg'"
                     alt="image not found" width="25px"/>
                   <img :src="config.public.APP_URL + '/layout/images/logo-icon.svg'"
                     alt="image not found"  />
-            </a>
-                <a href="index.html" class="logo-2"
-                  ><img src="/assets/img/logo/logo.webp" alt="image not found"
-                /></a>
+            </nuxtLink>
+                <nuxtLink to="/" class="logo-2"
+                  >
+                  <!-- <img src="/assets/img/logo/logo.webp" alt="image not found"/> -->
+                  <img :src="config.public.APP_URL + '/layout/images/icon.svg'"
+                    alt="image not found" width="25px"/>
+                  <img :src="config.public.APP_URL + '/layout/images/logo-icon.svg'"
+                    alt="image not found" width="120px" />
+            </nuxtLink>
               </div>
             </div>
             <div class="col-xxl-6 col-xl-6 col-lg-6 d-none d-lg-block text-center">
@@ -50,12 +55,9 @@ const responsiveSidebarClose = () => {
                     </li>
                     <li>
                       <nuxt-link to="/pricing">Pricing</nuxt-link>
-                    </li>
+                    </li> 
                     <li>
-                      <nuxt-link to="/about">About</nuxt-link>
-                    </li>
-                    <li>
-                      <nuxt-link to="/about">Blog</nuxt-link>
+                      <nuxt-link to="/blog">Blog</nuxt-link>
                     </li>
                     <li>
                       <nuxt-link to="/contact">Contact</nuxt-link>
@@ -124,12 +126,9 @@ const responsiveSidebarClose = () => {
                   </li>
                   <li>
                     <nuxt-link to="/pricing">Pricing</nuxt-link>
-                  </li>
+                  </li> 
                   <li>
-                    <nuxt-link to="/about">About</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/about">Blog</nuxt-link>
+                    <nuxt-link to="/blog">Blog</nuxt-link>
                   </li>
                   <li class="mean-last">
                     <nuxt-link to="/contact">Contact</nuxt-link>

@@ -25,10 +25,12 @@ const responsiveSidebarClose = () => {
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-6">
               <div class="sasup-logo mr-35 d-inline-block">
                 <a href="index.html" class="logo-1"
-                  ><img
-                    :src="config.public.APP_URL + '/assets/img/logo/logo-4.webp'"
-                    alt="image not found"
-                /></a>
+                  >
+                  <img :src="config.public.APP_URL + '/layout/images/icon.svg'"
+                    alt="image not found" width="25px"/>
+                  <img :src="config.public.APP_URL + '/layout/images/logo-icon.svg'"
+                    alt="image not found"  />
+            </a>
                 <a href="index.html" class="logo-2"
                   ><img src="/assets/img/logo/logo.webp" alt="image not found"
                 /></a>

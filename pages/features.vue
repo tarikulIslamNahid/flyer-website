@@ -15,14 +15,14 @@ useHead({
         <div class="breadcrumb-area pt-215 pb-140 mb-115 pb-130">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h3 class="breadcrumb-title">Services</h3>
+                    <h3 class="breadcrumb-title">Features</h3>
                     <div class="breadcrumb-trail">
                         <nav>
                             <ul class="trail-items">
                                 <li class="trail-item">
                                     <nuxt-link to="/"><span>Home</span></nuxt-link>
                                     </li>
-                                <li class="trail-item"><span>Services</span></li>
+                                <li class="trail-item"><span>Features</span></li>
                             </ul>
                         </nav>
                     </div>
@@ -557,7 +557,7 @@ useHead({
             </div>
         </div>
         <!-- pricing area end -->
-            <!-- cta area start -->
+        <!-- cta area start -->
             <div class="cta-area">
                 <div class="container">
                     <div class="row">
@@ -574,6 +574,6 @@ useHead({
                     </div>
                 </div>
             </div>
-            <!-- cta area end -->
+        <!-- cta area end -->
     </main>
 </template> 

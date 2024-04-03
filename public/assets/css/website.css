@@ -14046,7 +14046,9 @@ section.hero-area {
 }
 .breadcrumb-area{
   background-image: url(/assets/img/bg/breadcrumb_bg.webp) !important;
-
+}
+.brandcrumb-area-2{
+  background-image: url(/assets/img/bg/blog-details-bg.webp) !important;
 }
 /* .cta-area{
   background-image: url(/assets/img/bg/cta-1.webp);
@@ -14057,4 +14059,10 @@ section.hero-area {
 }
 .service-img-boxed-group.custom-h-100 {
   background-color: rgb(45, 115, 248);
+}
+.service-breadcrumb-title{
+  color: white;
+}
+.service-breadcrumb-meta {
+  color: white;
 }

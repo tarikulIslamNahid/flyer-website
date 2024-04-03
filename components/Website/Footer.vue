@@ -44,25 +44,7 @@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                <div class="sasup-widget-5 sasup-footer-col-4-2 mb-30">
-                                    <h4 class="sasup-footer-title-4">About Us</h4>
-                                    <div class="menu-resources-container">
-                                        <ul id="menu-resources" class="menu">
-                                            <li class="menu-item"><a
-                                                    href="contact.html">Documentation</a></li>
-                                            <li class="menu-item"><a
-                                                    href="team-details.html">Solutions</a></li>
-                                            <li class="menu-item"><a
-                                                    href="portfolio.html">Road Map</a></li>
-                                            <li class="menu-item"><a
-                                                    href="service.html">Brand Assets</a></li>
-                                            <li class="menu-item"><a
-                                                    href="about.html">User Flow</a></li>
-                                            <li class="menu-item"><a
-                                                    href="service.html">Feature List</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                             
                             </div>
                             <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6">
                                 <div class="sasup-widget-5 sasup-footer-col-4-3 mb-30 widget_nav_menu">

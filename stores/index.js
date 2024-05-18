@@ -1,11 +1,17 @@
 import { useToast } from 'primevue/usetoast';
 export const useMainStore = defineStore('main', () => {
     const permissions = ref([])
+    const packages = ref([])
     const toast = useToast();
 
         // set permissions
         const setPermissions = (newPermissions) => {
             permissions.value = newPermissions
+        }
+
+        // set packages
+        const setPackages = (newPackages) => {
+            packages.value = newPackages
         }
 
         // get permissions
@@ -17,14 +23,25 @@ export const useMainStore = defineStore('main', () => {
             if(permissions.data){
                 setPermissions(permissions.data.value)
                 return permissions.data.value
-                console.log(permissions,'oer')
             }
             return permissions
         }
 
+        async function getPackages(){
+            const packages = await useApiFetch("global/website/plans");
+            console.log(packages.data.value.data,'pers')
+
+            // check error and data 
+            if(packages.data){
+                setPackages(packages.data.value.data)
+                return packages.data.value.data
+            }
+            return packages
+        }
+
 
     return {
-     permissions,getPermissions,setPermissions
+     permissions,getPermissions,setPermissions,getPackages,packages,
     }
   })
 

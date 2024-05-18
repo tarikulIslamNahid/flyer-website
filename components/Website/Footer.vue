@@ -117,7 +117,7 @@
                         <div class="row align-items-center">
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                 <div class="sasup-footer-copyright-left-4 mb-30">
-                                    <p>Copyright ©2022 Bdevs. All Rights Reserved</p>
+                                    <p>Copyright ©2024 CodeX. All Rights Reserved</p>
                                 </div>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">

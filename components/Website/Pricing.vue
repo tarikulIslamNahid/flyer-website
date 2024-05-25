@@ -58,7 +58,7 @@
                                                 {{plan.name}}</h3>
                                             <p class="sasup-pricing-box-top-desc-2">
                                                 {{plan.short_descriptions}}</p>
-             <nuxtLink :class="plan.is_featured?'active':''" to="/sign-up?plan=1&type=0" class="sasup-pricing-box-top-action-2">Get Started</nuxtLink>
+             <nuxtLink :class="plan.is_featured?'active':''" :to="'/sign-up?plan='+1+'&type='+type" class="sasup-pricing-box-top-action-2">Get Started</nuxtLink>
                                         </div>
                                         <div class="sasup-pricing-box-bottom-2">
                                             <div class="sasup-pricing-box-bottom-title-wrap-2">

@@ -8,6 +8,8 @@ import { useRouter } from 'vue-router';
 
 const isLoad = ref(true);
 const router = useRouter();
+
+console.log(router.currentRoute.value.name, 'router')
 router.beforeEach((to, from, next) => {
     window.scrollTo(0, 0);
     // isLogin footer = to.meta.layout === 'website';
@@ -84,7 +86,7 @@ window.addEventListener('click', function() {
     </div>
     <div v-else>
         <Toast />
-        <websiteHeader/>
+        <websiteHeader v-if="router.currentRoute.value.name!='sign-up'"/>
         <router-view></router-view>
 
     </div>

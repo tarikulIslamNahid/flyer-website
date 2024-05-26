@@ -135,11 +135,18 @@ const submitAccountInfo = async () => {
     console.log(accountInfoInsert.data.value)
     if(accountInfoInsert.data.value){
         if(accountInfoInsert.data.value?.data && accountInfoInsert.data.value?.data.error_code=="subscriber_email_otp"){
-    toast.add({severity:'success', summary: 'Successful', detail: accountInfoInsert.data.value?.data.message, life:3000});
+        toast.add({severity:'success', summary: 'Successful', detail: accountInfoInsert.data.value?.data.message, life:3000});
+        step.value=2
+    }else if(accountInfoInsert.data.value?.data && accountInfoInsert.data.value?.data.error_code=="subscriber_make_payment"){
+            
+        toast.add({severity:'success', summary: 'Successful', detail: accountInfoInsert.data.value?.data.message, life:3000});
+        step.value=3
+
         }else{
             toast.add({severity:'success', summary: 'Successful', detail: accountInfoInsert.data.value.message, life: 3000});
-        }
         step.value=2
+
+        }
     }
     else{
       console.log(accountInfoInsert.error.value.data,'error')

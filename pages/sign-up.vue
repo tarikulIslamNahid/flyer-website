@@ -16,7 +16,7 @@ import InputOtp from 'primevue/inputotp';
 const toast = useToast();
 const config = useRuntimeConfig();
 const isLoad = ref(true);
-const step = ref(2); 
+const step = ref(1); 
 const loading = ref(false);
 const user = ref(null);
 const isSubmitting = ref(false);
@@ -32,11 +32,29 @@ const accountInfoSetup = reactive({
     type: route.query.type,
     otp: null,
 });
+const emailVerifySetup = reactive({
+    otp: null,
+});
 // username without space
 const userName = (value) => {
   return /^[a-zA-Z0-9_]*$/.test(value);
 };
 
+const emailVerifyRules = computed(() => {
+  return {  
+    otp: {
+      required: helpers.withMessage(
+        "The OTP Field Is Require",
+        required
+      ),
+      minLength: helpers.withMessage(
+        "The OTP Field Must Be At Least 6 Characters",
+        minLength(6)
+      ),
+      $autoDirty: true,
+    },
+  };
+});
 const accountInfoRules = computed(() => {
   return {
     name: {
@@ -91,10 +109,13 @@ const accountInfoRules = computed(() => {
   };
 });
 const v$ = useVuelidate(accountInfoRules, accountInfoSetup);
+const email$ = useVuelidate(emailVerifyRules, emailVerifySetup);
 
 
 const submitAccountInfo = async () => {
   v$.value.$validate();
+  if (v$.value.$invalid) {
+        return;}
   isSubmitting.value = true;
   let accountInfoInsert = null;
   let fd = {};
@@ -125,6 +146,34 @@ const submitAccountInfo = async () => {
         toast.add({severity:'error', summary: 'Error', detail: accountInfoInsert.error?.value?.data?.message, life: 3000});
         console.log(accountInfoInsert.error)
     } 
+}
+
+const emailVerify = async () =>{
+     // validate accountInfoSetup.otp
+  email$.value.$validate();
+  // check if the form is valid
+    if (email$.value.$invalid) {
+        return;}
+
+    isSubmitting.value = true;
+    let accountInfoInsert = null;
+    let fd = {};
+        fd['email'] = accountInfoSetup.email;
+        fd['otp'] = emailVerifySetup.otp;
+    accountInfoInsert = await useApiFetch("subscriber/verify-email", {
+        method: "POST",
+        body: fd,
+    });
+    isSubmitting.value = false;
+    console.log(accountInfoInsert.data.value)
+    if(accountInfoInsert.data.value){
+        toast.add({severity:'success', summary: 'Successful', detail: accountInfoInsert.data.value.message, life: 3000});
+        step.value=3
+    }
+    else{
+        toast.add({severity:'error', summary: 'Error', detail: accountInfoInsert.error.value.data.message, life: 3000});
+    }
+
 }
 
 onMounted( async () => {
@@ -274,17 +323,7 @@ onMounted( async () => {
                         <!--end::Nav-->
                     </div>
                     <!--end::Body-->
-                    <!--begin::Footer-->
-                    <div class="d-flex flex-center flex-wrap px-5 py-10">
-                        <!--begin::Links-->
-                        <div class="d-flex fw-normal">
-                            <a href="https://keenthemes.com" class="text-success px-5" target="_blank">Terms</a>
-                            <a href="https://devs.keenthemes.com" class="text-success px-5" target="_blank">Plans</a>
-                            <a href="https://1.envato.market/EA4JP" class="text-success px-5" target="_blank">Contact Us</a>
-                        </div>
-                        <!--end::Links-->
-                    </div>
-                    <!--end::Footer-->
+             
                 </div>
             </div>
             <!--begin::Aside-->
@@ -399,7 +438,8 @@ onMounted( async () => {
                                                 <div class="mb-4 fw-bold text-start text-gray-900 fs-6 mb-1 ms-1">Type your 6 digit OTP code</div>
                                                 <!--end::Label-->
                                                 <!--begin::Input group-->
-                                                <InputOtp v-model="accountInfoSetup.otp" integerOnly :length="6" />
+                                                <InputOtp v-model="emailVerifySetup.otp" :class="{'p-invalid': email$.otp?.$error}" integerOnly :length="6" />
+ <span v-if="email$?.otp?.$error" role="alert" class="p-error">{{ email$.otp?.$errors[0].$message}}</span>
                                                 <!--begin::Input group-->
                                             </div>
                                             <!--end::Section-->

@@ -5734,11 +5734,14 @@
   font-size: 1rem;
   font-weight: normal;
 }
+.p-inputotp .p-inputtext{
+  font-size: 2.25rem !important;
+}
 
 .p-inputtext {
   font-family: var(--font-family);
   font-feature-settings: var(--font-feature-settings, normal);
-  font-size: 2.25rem !important;
+  font-size: 1rem;
   color: #334155;
   background: #ffffff;
   padding: 0.5rem 0.75rem;

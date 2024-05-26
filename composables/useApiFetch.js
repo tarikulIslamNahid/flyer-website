@@ -4,8 +4,6 @@ async function useApiFetch(path, options={}) {
 const auth = useAuthStore();
 const config = useRuntimeConfig();
   let headers = {
-    accept: 'application/json',
-    'Content-Type': 'application/json',
     referer: config.public.APP_URL,
   }
 $fetch(config.public.baseURL+'sanctum/csrf-cookie',{

@@ -5723,3 +5723,165 @@
  :focus-visible {
   box-shadow: none !important;
 }
+.p-inputotp {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.p-component {
+  font-family: var(--font-family);
+  font-feature-settings: var(--font-feature-settings, normal);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.p-inputtext {
+  font-family: var(--font-family);
+  font-feature-settings: var(--font-feature-settings, normal);
+  font-size: 2.25rem !important;
+  color: #334155;
+  background: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, outline-color 0.2s;
+  appearance: none;
+  border-radius: 6px;
+  outline-color: transparent;
+}
+.p-inputtext:enabled:hover {
+  border-color: #94a3b8;
+}
+.p-inputtext:enabled:focus {
+  outline: 1px solid var(--p-focus-ring-color);
+  outline-offset: -1px;
+  box-shadow: none;
+  border-color: #94a3b8;
+}
+.p-inputtext.p-invalid.p-component {
+  border-color: #f87171;
+}
+.p-inputtext.p-variant-filled {
+  background-color: #f8fafc;
+}
+.p-inputtext.p-variant-filled:enabled:hover {
+  background-color: #f8fafc;
+}
+.p-inputtext.p-variant-filled:enabled:focus {
+  background-color: #ffffff;
+}
+.p-inputtext.p-inputtext-sm {
+  font-size: 0.875rem;
+  padding: 0.4375rem 0.65625rem;
+}
+.p-inputtext.p-inputtext-lg {
+  font-size: 1.25rem;
+  padding: 0.625rem 0.9375rem;
+}
+
+.p-inputotp {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.p-inputotp-input {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+}
+
+.p-inputgroup {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.p-inputgroup-addon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-inputgroup .p-float-label {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.p-inputgroup .p-inputtext,
+.p-fluid .p-inputgroup .p-inputtext,
+.p-inputgroup .p-inputwrapper,
+.p-fluid .p-inputgroup .p-input {
+  flex: 1 1 auto;
+  width: 1%;
+}
+
+.p-inputgroup-addon {
+  background: #ffffff;
+  color: #64748b;
+  border-top: 1px solid #cbd5e1;
+  border-left: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  padding: 0.5rem 0.75rem;
+  min-width: 2.5rem;
+}
+.p-inputgroup-addon:last-child {
+  border-right: 1px solid #cbd5e1;
+}
+
+.p-inputgroup > .p-component,
+.p-inputgroup > .p-inputwrapper > .p-inputtext,
+.p-inputgroup > .p-float-label > .p-component {
+  border-radius: 0;
+  margin: 0;
+}
+.p-inputgroup > .p-component + .p-inputgroup-addon,
+.p-inputgroup > .p-inputwrapper > .p-inputtext + .p-inputgroup-addon,
+.p-inputgroup > .p-float-label > .p-component + .p-inputgroup-addon {
+  border-left: 0 none;
+}
+.p-inputgroup > .p-component:focus,
+.p-inputgroup > .p-inputwrapper > .p-inputtext:focus,
+.p-inputgroup > .p-float-label > .p-component:focus {
+  z-index: 1;
+}
+.p-inputgroup > .p-component:focus ~ label,
+.p-inputgroup > .p-inputwrapper > .p-inputtext:focus ~ label,
+.p-inputgroup > .p-float-label > .p-component:focus ~ label {
+  z-index: 1;
+}
+
+.p-inputgroup-addon:first-child,
+.p-inputgroup button:first-child,
+.p-inputgroup input:first-child,
+.p-inputgroup > .p-inputwrapper:first-child,
+.p-inputgroup > .p-inputwrapper:first-child > .p-inputtext {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.p-inputgroup .p-float-label:first-child input {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.p-inputgroup-addon:last-child,
+.p-inputgroup button:last-child,
+.p-inputgroup input:last-child,
+.p-inputgroup > .p-inputwrapper:last-child,
+.p-inputgroup > .p-inputwrapper:last-child > .p-inputtext {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.p-inputgroup .p-float-label:last-child input {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.p-fluid .p-inputgroup .p-button {
+  width: auto;
+}
+.p-fluid .p-inputgroup .p-button.p-button-icon-only {
+  width: 2.5rem;
+}
